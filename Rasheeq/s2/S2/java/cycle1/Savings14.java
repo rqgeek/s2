@@ -1,0 +1,46 @@
+class SavingsAccount{
+	static float annualInterestRate;
+	private float savingsBalance;
+	void calculateMonthlyInterest(){
+		float interest = annualInterestRate*savingsBalance/12;
+		savingsBalance+=interest;
+	}
+	void modifyInterest(float newRate){
+		annualInterestRate=newRate;
+		calculateMonthlyInterest();
+
+	}
+	SavingsAccount(float amount,float rate){
+		savingsBalance=amount;
+		annualInterestRate=rate;
+		calculateMonthlyInterest();
+	}
+	float getBalance(){
+		return savingsBalance;
+	}
+	
+}
+class Savings14{
+	static SavingsAccount saver1=new SavingsAccount(2000f,0.07f);
+	static SavingsAccount saver2=new SavingsAccount(3000f,0.07f);
+	public static void main(String args[]){
+		System.out.println("***Before changing Interest Rate***");
+		print();
+		saver1.modifyInterest(0.15f);
+		saver2.modifyInterest(0.15f);
+		System.out.println("***After changing Interest Rate***");
+		print();
+		for(int i=0;i<12;i++){
+			saver1.modifyInterest(0.04f);
+			saver2.modifyInterest(0.04f);
+		}
+		System.out.println("***After changing Interest Rate to 4%***");
+		print();
+
+	}
+	static void print(){
+		System.out.println("Customer\tBalance\t\tAnnualInterestRate");
+                System.out.println("saver1\t\t"+saver1.getBalance()+"\t"+saver1.annualInterestRate);
+                System.out.println("saver2\t\t"+saver2.getBalance()+"\t\t"+saver2.annualInterestRate);
+	}
+}

@@ -1,0 +1,12 @@
+#include<stdio.h>
+main(){
+	int s1, s2, s3, s4, s5, sum;
+	float percentage;
+	printf("Enter marks of five subject (Maximum 100)\n");
+	scanf("%d %d %d %d %d", &s1, &s2, &s3, &s4, &s5);
+	sum = s1 + s2 + s3 + s4 + s4;
+	percentage = (sum/500)*100;
+	printf("Sum \t = %d \n Percentage \t = %d", sum, percentage);
+	if(percentage<40)
+		printf("\nGrade \t : A");printf("\nGrade \t : A");
+

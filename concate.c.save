@@ -1,0 +1,69 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int info;
+    struct node *link;
+};
+struct node *create_list(struct node *);
+struct node *concat( struct node *start1,struct node *start2);
+struct node *addatbeg(struct node *start, int data);
+struct node *addatend(struct node *start,int data);
+void display(struct node *start);
+
+void  main()
+{
+    struct node *start1=NULL,*start2=NULL;
+    start1=create_list(start1);
+    start2=create_list(start2);
+    printf("First list is  : ");
+    display(start1);
+    printf("Second list is  : ");
+    display(start2);
+    start1=concat(start1, start2);
+    printf("Concatenated list is  : ");
+    display(start1);
+}/*End of main()*/
+
+struct node *concat( struct node *start1,struct node *start2)
+{
+    struct node *ptr;
+    if(start1==NULL)
+    {
+        start1=start2;
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int info;
+    struct node *link;
+};
+struct node *create_list(struct node *);
+struct node *concat( struct node *start1,struct node *start2);
+struct node *addatbeg(struct node *start, int data);
+struct node *addatend(struct node *start,int data);
+void display(struct node *start);
+
+void  main()
+{
+    struct node *start1=NULL,*start2=NULL;
+    start1=create_list(start1);
+    start2=create_list(start2);
+    printf("First list is  : ");
+    display(start1);
+    printf("Second list is  : ");
+    display(start2);
+    start1=concat(start1, start2);
+    printf("Concatenated list is  : ");
+    display(start1);
+}/*End of main()*/
+
+struct node *concat( struct node *start1,struct node *start2)
+{
+    struct node *ptr;
+    if(start1==NULL)
+    {
+        start1=start2;
+

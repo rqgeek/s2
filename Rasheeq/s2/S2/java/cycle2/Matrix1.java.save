@@ -1,0 +1,59 @@
+class Matrix1{
+	BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String args[]){
+		int a[20][20],b[20][20],sum[20][20],dif[20][20],prod[20][20];
+		int i,j,k,r1,c1,r2,c2;
+		System.out.println("---***### M A T R I X ###***---");
+		System.out.println("Enter the details of Matrix 1:-");
+		System.out.print("Number of rows\t:");
+		try{
+			r1=Integer.parseInt(br.readLine());
+			System.out.print("Number of columns\t:");
+			c1=Integer.parseInt(br.readLIne());
+			System.out.println("Enter the details of Matrix 2:-");
+			System.out.print("Number of rows\t:");
+			r2=Integer.parseInt(br.readLine());
+			System.out.println("Number of columns\t:");
+			c2=Integer.parseInt(br.readLine());
+		}
+		System.out.println("\n");
+		if(r1!=r2||c1!=c2){
+			System.out.println("The matrix cannot be added or substracted");
+		}else{
+			readMatrix(r1,c1,a);
+			readMatrix(r2,c2,b);
+			computeMatrix(r1,c1,a,b,sum,dif);
+			printMatrix(r1,c1,a);
+			printMatrix(r2,c2,b);
+			printMatrix(r1,c1,sum);
+			printMatrix(r2,c2,dif);
+		}
+		if(c1!=r2){
+			System.out.println("The matrix cannot be multiplied");
+		}else{
+			multMatrix(r1,c1,r2,c2,a,b,prod);
+			printMatrix(r1,c2,prod);
+		}
+	}
+	void readMatrix(int m,int n,int a[m][n]) throws IOException{
+		System.out.println("Enter the elements of the matrix");
+		for(int i=0;i<m;i++){
+			for(int j=0;j<n;j++){
+				a[i][j]=Integer.parseInt(br.readLine());
+			}
+		}
+	}
+	void computeMatrix(int m,int n,int a[m][n],int b[m][n],int sum[m][n],int dif[m][n]){
+		for(int i=0;i<m;i++){
+			for(int j=0;j<n;j++){
+				sum[i][j]=a[i][j]+b[i][j];
+				dif[i][j]=a[i][j]-b[i][j];
+			}
+		}
+	}
+	void multMatrix(int r1,int c1,int r2,int c2,int a[r1][c1],int b[r1][c2],int p[r1][c2]){
+		for(int i=0;i<r1;i++){
+			for(int j=0;j<r
+	}
+}
+

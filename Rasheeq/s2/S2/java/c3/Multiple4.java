@@ -1,0 +1,98 @@
+abstract class A
+{
+public  abstract void draw(int x,int y);
+}
+class square extends A
+{
+int i,j;
+public void draw(int x,int y)
+{
+System.out.println("square");
+for(i=0;i<x;i++)
+{
+for(j=0;j<y;j++)
+{
+System.out.print("*");
+System.out.print(" ");
+}
+System.out.print("\n");
+}
+}
+}
+class right extends A
+{
+int t,i,j;
+public void draw(int x,int y)
+{
+System.out.println("right triangle");
+for(i=1;i<=x;i++)
+{
+for(j=0;j<i;j++)
+{
+System.out.print("%");
+System.out.print(" ");
+}
+System.out.print("\n");
+}
+}
+}
+class equal extends A
+{
+int i,j,k,v;
+public void draw (int x,int y)
+{
+v=x;
+System.out.println("equalatral triangle");
+for(i=1;i<=x;i++)
+{
+for(k=0;k<v-1;k++)
+{
+System.out.print(" ");
+}
+for(j=0;j<i;j++)
+{
+System.out.print("#");
+System.out.print(" ");
+v--;
+}
+System.out.print("\n");
+}
+}
+}
+class abstract
+{
+public static void main(String args[])
+{
+square ob=new square();
+ob.draw(5,5);
+right obj=new right();
+obj.draw(5,5);
+equal o=new equal();
+o.draw(5,5);
+}
+}
+
+interface Disp{
+	void disp(int n);
+}
+class Data{
+	int data=10;
+	int getData(){
+		return data;
+	}
+}
+class Inherit extends Data implements Disp{
+	void run(){
+		disp(getData());
+	}
+	public void disp(int n){
+		System.out.println("Data = "+n);
+	}
+}
+class Multiple4{
+	public static void main(String args[]){
+		Inherit i = new Inherit();
+		i.run();
+	}
+}
+
